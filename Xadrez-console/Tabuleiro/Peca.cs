@@ -14,7 +14,7 @@ namespace tabuleiro
         public Peca(Cor cor, Tabuleiro tabuleiro)
         {
             Posicao = null;
-            Cor = Cor;
+            Cor = cor;
             Tabuleiro = tabuleiro;
             QteMovimentos = 0;
         }

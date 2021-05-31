@@ -16,6 +16,8 @@ namespace Xadrez_console
                 tabuleiro.ColocarPeca(new Torre(Cor.Preta, tabuleiro), new Posicao(3, 4));
                 tabuleiro.ColocarPeca(new Torre(Cor.Preta, tabuleiro), new Posicao(0, 2));
 
+                tabuleiro.ColocarPeca(new Torre(Cor.Branca, tabuleiro), new Posicao(7, 0));
+                tabuleiro.ColocarPeca(new Torre(Cor.Branca, tabuleiro), new Posicao(7, 7));
                 Tela.ImprimirTabuleiro(tabuleiro);
                 Console.ReadLine();
             }
