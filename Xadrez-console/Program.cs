@@ -10,13 +10,18 @@ namespace Xadrez_console
         {
             try
             {
-                Tabuleiro tabuleiro = new Tabuleiro(8, 8);
+                PosicaoXadrez pos = new PosicaoXadrez('c', 1);
 
-                tabuleiro.ColocarPeca(new Rei(Cor.Branca, tabuleiro), new Posicao(0, 0));
-                tabuleiro.ColocarPeca(new Torre(Cor.Branca, tabuleiro), new Posicao(3, 4));
-                tabuleiro.ColocarPeca(new Torre(Cor.Branca, tabuleiro), new Posicao(0, 0));
+                Console.WriteLine(pos);
 
-                Tela.ImprimirTabuleiro(tabuleiro);
+                Console.WriteLine(pos.ToPosicao());
+                //Tabuleiro tabuleiro = new Tabuleiro(8, 8);
+
+                //tabuleiro.ColocarPeca(new Rei(Cor.Branca, tabuleiro), new Posicao(0, 0));
+                //tabuleiro.ColocarPeca(new Torre(Cor.Branca, tabuleiro), new Posicao(3, 4));
+                //tabuleiro.ColocarPeca(new Torre(Cor.Branca, tabuleiro), new Posicao(0, 9));
+
+                //Tela.ImprimirTabuleiro(tabuleiro);
             }
             catch(TabuleiroExcepetion e)
             {
