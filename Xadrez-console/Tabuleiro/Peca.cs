@@ -4,7 +4,7 @@ using System.Text;
 
 namespace tabuleiro
 {
-    class Peca
+    abstract class Peca
     {
         public Posicao Posicao { get; set; }
         public Cor Cor { get; protected set; }
@@ -19,9 +19,17 @@ namespace tabuleiro
             QteMovimentos = 0;
         }
 
+        protected bool PodeMover(Posicao pos)
+        {
+            Peca p = Tabuleiro.Peca(pos);
+            return p == null || p.Cor != Cor;
+        }
+
         public void IncrementarQteMovimentos()
         {
             QteMovimentos++;
         }
+
+        public abstract bool[,] MovimentosPossiveis();
     }
 }
