@@ -8,14 +8,14 @@ namespace xadrez
     class PartidaDeXadrez
     {
         public Tabuleiro Tabuleiro { get; private set; }
-        private int turno;
-        private Cor jogadorAtual;
+        public int Turno { get; private set; }
+        public Cor jogadorAtual { get; private set; }
         public bool Terminada { get; private set; }
 
         public PartidaDeXadrez()
         {
             Tabuleiro = new Tabuleiro(8, 8);
-            turno = 1;
+            Turno = 1;
             jogadorAtual = Cor.Branca;
             ColocarPecas();
             Terminada = false;
@@ -27,6 +27,25 @@ namespace xadrez
             p.IncrementarQteMovimentos();
             Peca pecaCapturada = Tabuleiro.RetirarPeca(destino);
             Tabuleiro.ColocarPeca(p, destino);
+        }
+
+        public void RealizarJogada(Posicao origem, Posicao destino)
+        {
+            ExecutarMovimento(origem, destino);
+            Turno++;
+            MudaJogador();
+        }
+
+        private void MudaJogador()
+        {
+            if (jogadorAtual == Cor.Branca)
+            {
+                jogadorAtual = Cor.Preta;
+            }
+            else
+            {
+                jogadorAtual = Cor.Branca;
+            }
         }
 
         private void ColocarPecas()
