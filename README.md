@@ -1,4 +1,4 @@
-# java_console_chess_game
+# C#_console_chess_game
 A complete console chess game using C#.
 
 The game has all the functionality of a chess game, including:
